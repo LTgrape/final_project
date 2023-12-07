@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>게시판</title>
+  <link rel="stylesheet" th:href="@{/css/board/boardList.css}" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" />
+</head>
+<body>
+<header class="header">
+  <div class="header-container">
+    <a href="#" class="logo">LOGO</a>
+    <nav class="nav">
+      <a href="login.html" class="nav-item login">로그인</a>
+      <a href="join.html" class="nav-item signup">회원가입</a>
+    </nav>
+  </div>
+</header>
+<div class="container">
+  <h1 class="title">커뮤니티 게시판</h1>
+  <div class="btn-wrap">
+    <button class="add-post-btn">새 게시글 작성</button>
+  </div>
+  <div class="board">
+    <!-- 게시물 샘플 -->
+    <div class="board-item">
+      <div class="board-img-box">
+        <div class="board-item-image" style="background-image: url(https://via.placeholder.com/300x200)"></div>
+        <div class="board-item-info">
+              <span class="like">
+                <i class="fas fa-heart"></i>
+                <span class="like-count">12</span>
+              </span>
+          <span class="comment">
+                <i class="fas fa-comment"></i>
+                <span class="comment-count">5</span>
+              </span>
+        </div>
+      </div>
+      <div class="board-item-text">
+        <h3 class="board-item-title">게시글 제목</h3>
+        <span class="board-item-author">작성자</span>
+      </div>
+    </div>
+    <!-- /게시물 샘플 -->
+  </div>
+</div>
+<!-- 페이징 처리 -->
+<div class="page-container">
+  <ul class="page-box">
+    <a href="" class="page-a">
+      <li class="page-num prev">&lt</li>
+    </a>
+    <a href="" class="page-a">
+      <li class="page-num active">1</li>
+    </a>
+    <a href="" class="page-a">
+      <li class="page-num">2</li>
+    </a>
+    <a href="" class="page-a">
+      <li class="page-num">3</li>
+    </a>
+    <a href="" class="page-a">
+      <li class="page-num">4</li>
+    </a>
+    <a href="" class="page-a">
+      <li class="page-num">5</li>
+    </a>
+    <a href="" class="page-a">
+      <li class="page-num next">&gt</li>
+    </a>
+  </ul>
+</div>
+<!-- /페이징 처리 -->
+</body>
+</html>

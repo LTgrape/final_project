@@ -3,5 +3,7 @@
 
 <configuration>
     <typeAliases>
+        <typeAlias type="com.example.final_project.dto.UserDto" alias="userDto"/>
+        <typeAlias type="com.example.final_project.dto.BoardDto" alias="boardDto"/>
     </typeAliases>
 </configuration>
