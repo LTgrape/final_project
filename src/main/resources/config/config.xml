@@ -5,5 +5,7 @@
     <typeAliases>
         <typeAlias type="com.example.final_project.dto.UserDto" alias="userDto"/>
         <typeAlias type="com.example.final_project.dto.BoardDto" alias="boardDto"/>
+
+        <typeAlias type="com.example.final_project.vo.BoardVo" alias="boardVo"/>
     </typeAliases>
 </configuration>

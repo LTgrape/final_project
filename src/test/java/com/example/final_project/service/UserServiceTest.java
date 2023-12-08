@@ -53,6 +53,7 @@ class UserServiceTest {
         // then
         assertThat(foundNumber).isEqualTo(1L);
     }
+
 }
 
 
