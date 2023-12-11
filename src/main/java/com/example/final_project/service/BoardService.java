@@ -3,6 +3,7 @@ package com.example.final_project.service;
 import com.example.final_project.dto.BoardDto;
 import com.example.final_project.mapper.BoardMapper;
 import com.example.final_project.vo.BoardVo;
+import com.example.final_project.vo.Criteria;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -31,13 +32,18 @@ public class BoardService {
 
     //    상세 정보 조회
     public BoardVo find(Long boardNumber){
-        return Optional.ofNullable(boardMapper.select(boardNumber))
+        return boardMapper.select(boardNumber)
                 .orElseThrow(() -> new IllegalStateException("존재하지 않는 게시물 번호!"));
     }
 
     //    리스트 조회
-    public List<BoardVo> findAll(){
-        return boardMapper.selectAll();
+    public List<BoardVo> findAll(Criteria criteria){
+        return boardMapper.selectAll(criteria);
+    }
+
+    //    총 게시물 수 조회
+    public int findTotal(){
+        return boardMapper.selectTotal();
     }
 }
 

@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Optional;
+
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -22,7 +24,7 @@ class UserMapperTest {
     @BeforeEach
     void setUp() {
         userDto = new UserDto();
-        userDto.setUserId("aaa");
+        userDto.setUserId("test");
         userDto.setUserPassword("1234");
         userDto.setUserGender("M");
         userDto.setUserEmail("aaa@naver.com");
@@ -34,9 +36,9 @@ class UserMapperTest {
 //        given
         userMapper.insert(userDto);
 //        when
-        Long foundNumber = userMapper.selectUserNumber(userDto.getUserId(), userDto.getUserPassword());
+        Optional<Long> foundNumber = userMapper.selectUserNumber(userDto.getUserId(), userDto.getUserPassword());
 //        then
-        assertThat(foundNumber).isEqualTo(userDto.getUserNumber());
+        assertThat(foundNumber.get()).isEqualTo(userDto.getUserNumber());
     }
 }
 

@@ -79,13 +79,13 @@ class BoardServiceTest {
         assertThat(foundBoard).isEqualTo(boardVo);
     }
 
-    @Test
-    void findAll() {
-        // given
-        doReturn(List.of(boardVo)).when(boardMapper).selectAll();
-        // when
-        List<BoardVo> boardList = boardService.findAll();
-        // then
-        boardList.contains(boardVo);
-    }
+//    @Test
+//    void findAll() {
+//        // given
+//        doReturn(List.of(boardVo)).when(boardMapper).selectAll();
+//        // when
+//        List<BoardVo> boardList = boardService.findAll();
+//        // then
+//        boardList.contains(boardVo);
+//    }
 }

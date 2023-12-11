@@ -7,5 +7,19 @@
         <typeAlias type="com.example.final_project.dto.BoardDto" alias="boardDto"/>
 
         <typeAlias type="com.example.final_project.vo.BoardVo" alias="boardVo"/>
+        <typeAlias type="com.example.final_project.vo.Criteria" alias="criteria"/>
     </typeAliases>
 </configuration>
+
+
+
+
+
+
+
+
+
+
+
+
+

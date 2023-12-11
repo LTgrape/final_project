@@ -8,24 +8,16 @@
   <link rel="stylesheet" th:href="@{/css/board/boardView.css}" />
 </head>
 <body>
-<header class="header">
-  <div class="header-container">
-    <a href="board.html" class="logo">LOGO</a>
-    <nav class="nav">
-      <a href="login.html" class="nav-item login">로그인</a>
-      <a href="join.html" class="nav-item signup">회원가입</a>
-    </nav>
-  </div>
-</header>
+<header class="header" th:replace="fragments/header :: header"></header>
 <div class="container">
   <h1 class="title">자유 게시판</h1>
   <div class="post-wrap">
     <div class="post-wrap__box">
       <div class="post-header">
-        <h2 class="post-title">게시물 제목</h2>
-        <p class="post-info">작성자: 홍길동 | 작성일: 2023-03-31 | 수정일 : 2023-04-01</p>
+        <h2 class="post-title" th:text="${board.boardTitle}"></h2>
+        <p class="post-info" th:text="'작성자: ' + ${board.userId} + ' | 작성일: ' + ${board.boardRegisterDate} +' | 수정일 : ' + ${board.boardUpdateDate}"></p>
       </div>
-      <div class="post-content">게시물 내용</div>
+      <div class="post-content" th:text="${board.boardContent}"></div>
       <div class="post-images">
         <!-- 이미지 예시 -->
         <img src="example1.jpg" alt="첨부 이미지 1" />
@@ -34,8 +26,10 @@
       </div>
     </div>
     <div class="btn-wrap">
-      <button type="button" class="btn-modify">수정</button>
-      <button type="button" class="btn-remove">삭제</button>
+      <th:block th:if="${session.userNumber == board.userNumber}">
+        <button type="button" class="btn-modify">수정</button>
+        <button type="button" class="btn-remove">삭제</button>
+      </th:block>
       <button type="button" class="btn-back">뒤로 가기</button>
     </div>
     <div class="reply-wrap">
@@ -71,6 +65,7 @@
     </div>
   </div>
 </div>
+<input type="hidden" class="board-num" th:value="${board.boardNumber}">
 <script src="https://code.jquery.com/jquery-3.6.4.js"></script>
 <script th:src="@{/js/board/boardView.js}"></script>
 </body>

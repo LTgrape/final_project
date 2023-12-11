@@ -15,8 +15,19 @@ $('body').click(function (e) {
 });
 
 $('.btn-back').on('click', function (){
-    window.location.href = '/board/boardList';
+    window.location.href = '/board/list';
 })
+
+// 수정 버튼
+$('.btn-modify').on('click', function (){
+   let boardNumber = $('.board-num').val();
+   window.location.href = '/board/modify?boardNumber=' + boardNumber;
+});
+// 삭제 버튼
+$('.btn-remove').on('click', function (){
+    let boardNumber = $('.board-num').val();
+    window.location.href = '/board/remove?boardNumber=' + boardNumber;
+});
 
 // 리플 작성 완료 처리
 $('.btn-reply').on('click', function (){
