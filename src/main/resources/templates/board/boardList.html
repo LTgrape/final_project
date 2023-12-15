@@ -11,7 +11,7 @@
 <!-- replace를 활용하여 fragment를 가져와 넣어준다.-->
 <!-- replace를 사용한 태그는 해당 fragment로 교체된다.-->
 <!--                               html파일 경로 :: fragment이름 -->
-<header class="header" th:replace="fragments/header :: header"></header>
+<header class="header" th:replace="~{fragments/header :: header}"></header>
 <div class="container">
   <h1 class="title">커뮤니티 게시판</h1>
   <div class="btn-wrap">
@@ -21,7 +21,10 @@
     <!-- 게시물 샘플 -->
     <div class="board-item" th:each="board : ${boards}">
       <div class="board-img-box">
-        <div class="board-item-image" style="background-image: url(https://via.placeholder.com/300x200)"></div>
+        <div th:if="${board.fileName == null}" class="board-item-image" style="background-image: url(https://via.placeholder.com/300x200)"></div>
+        <div th:unless="${board.fileName == null}" class="board-item-image"
+             th:style="${'background-image: url(/upload/'+ board.fileUploadPath + '/th_' + board.fileUuid + '_' + board.fileName + ')'}"></div>
+
         <div class="board-item-info">
               <span class="like">
                 <i class="fas fa-heart"></i>
@@ -46,7 +49,7 @@
 <!-- 페이징 처리 -->
 <div class="page-container">
   <ul class="page-box" th:object="${pageInfo}">
-    <a href="" class="page-a">
+    <a th:href="@{/board/list(page=*{startPage - 1})}" class="page-a" th:if="*{prev}">
       <li class="page-num prev">&lt</li>
     </a>
 
@@ -56,13 +59,13 @@
       지원해준다.  sequence(1, 5) -> 1, 2, 3, 4, 5
 -->
     <th:block th:each="i : *{#numbers.sequence(startPage, endPage)}">
-      <a href="" class="page-a">
+      <a th:href="@{/board/list(page=${i})}" class="page-a">
         <li class="page-num" th:classappend="${i==pageInfo.criteria.page} ? 'active' : '' " th:text="${i}"></li>
       </a>
     </th:block>
 
 
-    <a href="" class="page-a">
+    <a th:href="@{/board/list(page=*{endPage+1})}" class="page-a" th:if="*{next}">
       <li class="page-num next">&gt</li>
     </a>
   </ul>

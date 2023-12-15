@@ -4,11 +4,13 @@ import com.example.final_project.dto.UserDto;
 import com.example.final_project.mapper.UserMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
+@Transactional
 public class UserService {
     private final UserMapper userMapper;
 

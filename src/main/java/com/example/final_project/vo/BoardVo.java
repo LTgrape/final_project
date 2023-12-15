@@ -15,4 +15,17 @@ public class BoardVo {
     private String boardUpdateDate;
     private Long userNumber;
     private String userId;
+    private String fileName;
+    private String fileUploadPath;
+    private String fileUuid;
+    private Long fileNumber;
 }
+
+
+
+
+
+
+
+
+

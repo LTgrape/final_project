@@ -39,8 +39,14 @@
 }
 
 .post-images img {
-    max-width: 23%;
+    max-width: 100%;
     border-radius: 5px;
+    display: inline-block;
+}
+
+.post-images a{
+    max-width: 23%;
+    display: inline;
 }
 
 /* 버튼 스타일 */
@@ -207,3 +213,22 @@
     margin-left: 10px;
     background-color: #00c7ae;
 }
+
+.reply-time{
+    font-size: 10px;
+    color: #777777;
+    min-width: 50px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

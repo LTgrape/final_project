@@ -5,8 +5,11 @@
     <typeAliases>
         <typeAlias type="com.example.final_project.dto.UserDto" alias="userDto"/>
         <typeAlias type="com.example.final_project.dto.BoardDto" alias="boardDto"/>
+        <typeAlias type="com.example.final_project.dto.FileDto" alias="fileDto"/>
+        <typeAlias type="com.example.final_project.dto.ReplyDto" alias="replyDto"/>
 
         <typeAlias type="com.example.final_project.vo.BoardVo" alias="boardVo"/>
+        <typeAlias type="com.example.final_project.vo.ReplyVo" alias="replyVo"/>
         <typeAlias type="com.example.final_project.vo.Criteria" alias="criteria"/>
     </typeAliases>
 </configuration>

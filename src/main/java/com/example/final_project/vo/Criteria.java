@@ -18,6 +18,10 @@ public class Criteria {
         this.page = 1;
         this.amount = 12;
     }
+
+    public Criteria(int page, int amount) {
+        this.page = page;
+    }
 }
 
 

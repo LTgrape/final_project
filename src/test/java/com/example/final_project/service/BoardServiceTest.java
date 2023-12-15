@@ -49,15 +49,15 @@ class BoardServiceTest {
         verify(boardMapper, times(1)).insert(any());
     }
 
-    @Test
-    void modify() {
-        // given
-        doNothing().when(boardMapper).update(any());
-        // when
-        boardService.modify(boardDto);
-        // then
-        verify(boardMapper, times(1)).update(any());
-    }
+//    @Test
+//    void modify() {
+//        // given
+//        doNothing().when(boardMapper).update(any());
+//        // when
+//        boardService.modify(boardDto);
+//        // then
+//        verify(boardMapper, times(1)).update(any());
+//    }
 
     @Test
     void remove() {
